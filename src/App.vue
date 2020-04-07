@@ -1,23 +1,19 @@
 <template>
   <div id="app">
-    <h1>Counter: {{ $store.state.counter }}</h1>
-
-    <button @click="increment(2)">Increment Two</button>
-    <button @click="increment(5)">Increment Five</button>
-    <button @click="decrement(10)">Decrement Ten</button>
+    <Display />
+    <Buttons />
   </div>
 </template>
 
 <script>
+import Display from "./components/Display";
+import Buttons from "./components/Buttons";
+
 export default {
   name: "app",
-  methods: {
-    increment(value) {
-      this.$store.commit("incrementCounter", value);
-    },
-    decrement(value) {
-      this.$store.commit("decrementCounter", value);
-    }
+  components: {
+    Display,
+    Buttons
   }
 };
 </script>
